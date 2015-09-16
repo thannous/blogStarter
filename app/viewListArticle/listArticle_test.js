@@ -9,7 +9,8 @@ describe('blog.viewListArticle module', function() {
     it('should ....', inject(function($controller) {
       //spec body
       var listArticleCtrl = $controller('ListArticleCtrl');
-      expect(listArticleCtrl).toBeDefined();
+      expect(listArticleCtrl
+      ).toBeDefined();
     }));
 
   });

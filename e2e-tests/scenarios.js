@@ -2,25 +2,25 @@
 
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
-describe('my app', function() {
+describe('blog', function() {
 
 
-  it('should automatically redirect to /viewListArticle when location hash/fragment is empty', function() {
+  it('should automatically redirect to /article when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/viewListArticle");
+    expect(browser.getLocationAbsUrl()).toMatch("/article");
   });
 
 
   describe('viewListArticle', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/viewListArticle');
+      browser.get('index.html#/article');
     });
 
 
-    it('should render viewListArticle when user navigates to /viewListArticle', function() {
+    it('should render viewListArticle when user navigates to /article', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+        toMatch(/This is the partial for listArticle./);
     });
 
   });
@@ -29,13 +29,13 @@ describe('my app', function() {
   describe('viewContact', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/viewContact');
+      browser.get('index.html#/contact');
     });
 
 
     it('should render viewContact when user navigates to /viewContact', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+        toMatch(/This is the partial for viewContact./);
     });
 
   });

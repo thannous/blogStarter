@@ -8,8 +8,8 @@ describe('blog.viewContact module', function() {
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view2Ctrl = $controller('ContactCtrl');
-      expect(view2Ctrl).toBeDefined();
+      var contactCtrl = $controller('ContactCtrl');
+      expect(contactCtrl).toBeDefined();
     }));
 
   });
