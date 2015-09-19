@@ -6,7 +6,7 @@ describe('blog', function() {
 
 
   it('should automatically redirect to /article when location hash/fragment is empty', function() {
-    browser.get('index.html');
+    browser.get('/');
     expect(browser.getLocationAbsUrl()).toMatch("/article");
   });
 
@@ -14,7 +14,7 @@ describe('blog', function() {
   describe('viewListArticle', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/article');
+      browser.get('/#/article');
     });
 
 
@@ -29,7 +29,7 @@ describe('blog', function() {
   describe('viewContact', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/contact');
+      browser.get('/#/contact');
     });
 
 

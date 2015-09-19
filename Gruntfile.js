@@ -19,19 +19,33 @@ module.exports = function (grunt) {
         },
 
         jshint: {
-            jshintrc: true
+            options : {
+                force : true
+            },
+            source : {
+                options : {
+                    jshintrc : true
+                },
+                files   : {
+                    src : [
+
+                        'app/components/**/*.js',
+                        'app/view*/**/*.js'
+                    ]
+                }
+            }
         },
         watch: {
             html : {
               files :'<%= config.app %>/**/*.html' ,
                 options: {
-                    livereload: 3000,
+                    livereload: 3001,
                 }
             },
             css: {
                 files: '<%= config.app %>/**/*.css',
                 options: {
-                    livereload: 3000,
+                    livereload: 3001,
                 }
             },
             scripts: {
@@ -73,7 +87,7 @@ module.exports = function (grunt) {
         // The actual grunt server settings
         connect: {
             options: {
-                port: 9000,
+                port: 3000,
                 livereload: 35729,
                 hostname: 'localhost'
             },
@@ -89,7 +103,15 @@ module.exports = function (grunt) {
         },
         open: {
             all: {
-                path: 'http://localhost:9000/index.html'
+                path: 'http://localhost:3000/'
+            }
+        }
+        ,
+        express: {
+            dev: {
+                options: {
+                    script: 'app.js'
+                }
             }
         }
 
@@ -97,10 +119,12 @@ module.exports = function (grunt) {
 
     grunt.registerTask('serve', function (target) {
         grunt.task.run([
+            'express:dev',
             'connect:livereload',
             'watch',
             'wiredep',
-            'open'
+            'open',
+            'jshint:source'
         ]);
     });
 };
