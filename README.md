@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/thannous/blogStarter.svg)](https://travis-ci.org/thannous/blogStarter)
-
+[![Coverage Status](https://coveralls.io/repos/thannous/blogStarter/badge.svg?branch=master&service=github)](https://coveralls.io/github/thannous/blogStarter?branch=master)
 
 # Blog starter
 
@@ -45,6 +45,7 @@ Unit tests with karma and End to End tests with protractor.
 
 [Travis CI][travis] is a continuous integration service
 
+### Coveralls.io
 
 ## Contact
 
