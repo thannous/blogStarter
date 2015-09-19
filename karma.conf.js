@@ -22,13 +22,14 @@ module.exports = function (config) {
             'karma-firefox-launcher',
             'karma-jasmine',
             'karma-coverage',
+            'karma-coveralls',
             'karma-junit-reporter'
         ],
-        reporters: ['junit','progress', 'coverage'],
+        reporters: ['junit','progress', 'coverage', 'coveralls'],
         preprocessors: {
             'app/view*/**/*.js': ['coverage']
         },
-        coverageReporter: {type: 'html', dir: 'coverage/'},
+        coverageReporter: {type: 'lcov', dir: 'coverage/'},
 
         junitReporter: {
             outputDir: 'testJunit',
